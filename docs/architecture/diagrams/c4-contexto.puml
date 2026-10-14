@@ -1,0 +1,19 @@
+@startuml
+title AutoCheck - Diagrama de contexto
+left to right direction
+
+actor "Usuario" as U
+rectangle "AutoCheck\nSistema web de preperitaje vehicular" as A
+database "Base de datos" as DB
+cloud "Servicio de inteligencia artificial" as IA
+
+U --> A : Registra datos y solicita evaluación
+A --> DB : Guarda y consulta información
+A --> IA : Solicita análisis
+IA --> A : Devuelve resultados
+
+note bottom of A
+Los resultados son orientativos y no
+sustituyen un peritaje profesional.
+end note
+@enduml

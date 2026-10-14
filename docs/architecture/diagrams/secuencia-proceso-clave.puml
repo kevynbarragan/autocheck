@@ -1,0 +1,29 @@
+@startuml
+title AutoCheck - Secuencia del preperitaje vehicular
+autonumber
+
+actor Usuario
+boundary "Interfaz web" as UI
+control "Backend y API" as API
+database "Base de datos" as DB
+participant "Servicio de evaluación" as IA
+
+Usuario -> UI : Ingresa datos y adjunta fotografías
+UI -> API : Envía solicitud
+API -> API : Valida datos y permisos
+
+alt Solicitud inválida
+  API --> UI : Devuelve errores
+  UI --> Usuario : Solicita correcciones
+else Solicitud válida
+  API -> DB : Guarda información
+  API -> IA : Solicita evaluación
+  IA -> DB : Guarda resultado preliminar
+  API --> UI : Devuelve resultado
+  UI --> Usuario : Muestra evaluación
+end
+
+note across
+El resultado es orientativo y no sustituye un peritaje profesional.
+end note
+@enduml
