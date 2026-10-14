@@ -1,1 +1,3 @@
-# autocheck
+Introducción
+El presente documento describe la implementación de un ecosistema de documentación de arquitectura viva para el proyecto AutoCheck, una aplicación web de preperitaje vehicular con inteligencia artificial. Esta documentación permite registrar las decisiones arquitectónicas mediante Architecture Decision Records (ADR) y representar el diseño del sistema mediante diagramas elaborados en PlantUML.
+La documentación se organiza dentro del repositorio oficial del proyecto, utilizando archivos Markdown y PlantUML que pueden mantenerse y versionarse mediante Git. De esta manera, se establece la trazabilidad entre las necesidades del sistema, las decisiones técnicas y su representación arquitectónica.
